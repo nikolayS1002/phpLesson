@@ -1,9 +1,12 @@
 <?php
-  $a = 1;
-  $b = 2;
 
-  $a = $a + $b;
-  $b = $a - $b;
-  $a = $a - $b;
+$menu = renderTemplate('menu');
+$content = renderTemplate('about');
+echo renderTemplate('layout', $content, $menu);
 
-  echo "a = $a, b = $b";
+
+function renderTemplate($page, $content = "", $menu = "") {
+    ob_start();
+    include $page . ".php";
+    return ob_get_clean();
+}
