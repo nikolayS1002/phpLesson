@@ -12,7 +12,6 @@ function render($page, $params = []) {
     ]);
 }
 
-
 //$params = [
 //    'menu' => renderTemplate('menu'),
 //    'content' => renderTemplate('catalog')

@@ -24,9 +24,6 @@ function upload()
     }
 }
 
-
-
-
 $messages = [
     'ok' => 'Файл заружен',
     'error' => 'Ошибка загрузки'
