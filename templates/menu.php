@@ -1,12 +1,13 @@
+<ul>
 <?php
-foreach ($params['menu'] as $key => $value) {
-    // echo $key . '  =>  ' . $value . '<br>';
-    echo "<a href=\"{$key}\">{$value}</a> ";
-}
-echo '<br>';
-
-
+foreach ($menu as $key => $value) {
 ?>
-<!--  <a href="/">Главная</a>
+<li><a href="<?=$key?>"><?=$value?></a></li>
+ <?php
+ }
+ echo '<br>';
+ ?></ul><br>
+
+<!-- <a href="/">Главная</a>
  <a href="/?page=catalog">Каталог</a>
- <a href="/">Корзина (<?= $count ?>)</a><br> -->
+ <a href="/">Корзина ($count)</a><br> -->
