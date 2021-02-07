@@ -1,10 +1,8 @@
 body {
-    background: #444 url('img/body.jpg');
-    color: #444;
     font: normal 1.2em Verdana, Arial, sans-serif;
     height: 100%;
     padding-bottom: 1px;
-    padding-top: 64px;
+    padding-top: 14px;
 }
 
 .gallery img {
@@ -17,10 +15,8 @@ a.photo:hover img {
 }
 
 #main {
-    width: 858px;
+    width: 1200px;
     margin: 0 auto;
-    background: #4A4A4A;
-    color: #CCC;
 }
 
 .post_title h2 {

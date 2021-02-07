@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="/public/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
 <script type="text/javascript" src="./scripts/jquery-1.4.3.min.js"></script>
 <script type="text/javascript" src="./scripts/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
 <script type="text/javascript" src="./scripts/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
