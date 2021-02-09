@@ -3,8 +3,8 @@ function getMenu($link = '/')
 {
     return [
         $link => 'Главная',
-        $link . '?page=catalog' => 'Каталог',
-        $link . '?page=gallery' => 'Галерея',
-        $link . '?page=cart' => 'Корзина (<?= $count ?>)',
+        $link . 'catalog' => 'Каталог',
+        $link . 'gallery' => 'Галерея',
+        $link . 'cart' => 'Корзина (<?= $count ?>)',
     ];
 }
