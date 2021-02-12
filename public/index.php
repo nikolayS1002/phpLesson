@@ -49,6 +49,10 @@ switch ($page) {
         $params['images'] = getOneImage($id);
         break;
 
+    case 'calculator':
+        $params['calc'] = getCalc();
+        break;
+
     case 'apicatalog':
         echo json_encode(getCatalog(), JSON_UNESCAPED_UNICODE);
         die();

@@ -6,5 +6,6 @@ function getMenu($link = '/')
         $link . 'catalog' => 'Каталог',
         $link . 'gallery' => 'Галерея',
         $link . 'cart' => 'Корзина (<?= $count ?>)',
+        $link . 'calculator' => 'Калькулятор',
     ];
 }
