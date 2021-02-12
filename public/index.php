@@ -3,12 +3,15 @@
 //Первым делом подключим файл с константами настроек
 include "../config/config.php";
 
+$url_array = explode('/', $_SERVER['REQUEST_URI']);
+
+
 //Читаем параметр page из url, чтобы определить, какую страницу-шаблон
 //хочет увидеть пользователь, по умолчанию это будет index
-if (isset($_GET['page'])) {
-    $page = $_GET['page'];
-} else {
+if ($url_array[1] == "") {
     $page = 'index';
+} else {
+    $page = $url_array[1];
 }
 
 //Для каждой страницы готовим массив со своим набором переменных
@@ -31,8 +34,23 @@ switch ($page) {
         if (!empty($_FILES)) {
             upload();
         }
+        $messages = [
+            'ok' => 'Файл заружен',
+            'error' => 'Ошибка загрузки'
+        ];
         $params['gallery'] = getGallery();
-        $params['message'] = $message;
+        $params['message'] = $messages[strtolower($_GET['message'])];
+        $params['images'] = getSortedImages();
+        break;
+
+    case 'imageone':
+        $id = (int)$_GET['id'];
+        $params['views'] = updateViews($id);
+        $params['images'] = getOneImage($id);
+        break;
+
+    case 'calculator':
+        $params['calc'] = getCalc();
         break;
 
     case 'apicatalog':
