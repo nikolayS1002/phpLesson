@@ -30,6 +30,11 @@ switch ($page) {
         $params['catalog'] = getCatalog();
         break;
 
+    case 'product':
+        $id = (int)$_GET['id'];
+        $params['product'] = getProduct($id);
+        break;
+
     case 'gallery':
         if (!empty($_FILES)) {
             upload();
@@ -38,8 +43,8 @@ switch ($page) {
             'ok' => 'Файл заружен',
             'error' => 'Ошибка загрузки'
         ];
+        $params['message'] = $messages[$_GET['message']];
         $params['gallery'] = getGallery();
-        $params['message'] = $messages[strtolower($_GET['message'])];
         $params['images'] = getSortedImages();
         break;
 
@@ -49,12 +54,24 @@ switch ($page) {
         $params['images'] = getOneImage($id);
         break;
 
+    case 'feedback':
+        $params['feedback'] = getFeedback();
+        if ($_POST) {
+            putFeedback();
+        }
+        $messages = [
+            'ok' => 'Отзыв добавлен',
+            'error' => 'Отзыв не был добавлен'
+        ];
+        $params['message'] = $messages[$_GET['message']];
+        break;
+
     case 'calculator':
         $params['calc'] = getCalc();
         break;
 
     case 'apicatalog':
-        echo json_encode(getCatalog(), JSON_UNESCAPED_UNICODE);
+        echo json_encode(getJsonCatalog(), JSON_UNESCAPED_UNICODE);
         die();
 }
 

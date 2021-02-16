@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Фев 09 2021 г., 18:35
+-- Время создания: Фев 16 2021 г., 21:00
 -- Версия сервера: 8.0.15
 -- Версия PHP: 7.3.2
 
@@ -25,6 +25,47 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` int(11) NOT NULL,
+  `name` varchar(33) NOT NULL,
+  `text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `name`, `text`) VALUES
+(1, 'Артем', 'Ваш магазин обладает наилучшими товарами!'),
+(5, 'Василий', 'Вы обладаете наилучшими качествами!');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `goods`
+--
+
+CREATE TABLE `goods` (
+  `id` int(11) NOT NULL,
+  `name` varchar(55) NOT NULL,
+  `description` text NOT NULL,
+  `price` int(19) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `goods`
+--
+
+INSERT INTO `goods` (`id`, `name`, `description`, `price`) VALUES
+(1, 'Карандаш', 'Простой карандаш, подходит для написания текста и рисования', 30),
+(2, 'Ручка', 'Яркая синяя ручка', 100);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `images`
 --
 
@@ -41,7 +82,7 @@ CREATE TABLE `images` (
 
 INSERT INTO `images` (`id`, `title`, `size`, `views`) VALUES
 (1, '01.jpg', 0, 0),
-(2, '02.jpg', 0, 10),
+(2, '02.jpg', 0, 12),
 (3, '03.jpg', 0, 1),
 (4, '04.jpg', 2, 0),
 (5, '05.jpg', 0, 0),
@@ -63,11 +104,24 @@ INSERT INTO `images` (`id`, `title`, `size`, `views`) VALUES
 (21, '21.jpg', 0, 3),
 (22, '22.jpg', 0, 0),
 (33, '23.jpg', 0, 0),
-(42, '24.jpg', 248649, 4);
+(42, '24.jpg', 248649, 5),
+(43, '25.jpg', 77204, 0);
 
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `goods`
+--
+ALTER TABLE `goods`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `images`
@@ -80,10 +134,22 @@ ALTER TABLE `images`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT для таблицы `goods`
+--
+ALTER TABLE `goods`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT для таблицы `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -11,6 +11,7 @@ function getCalc($arg1 = '', $arg2 = '', $op = ''){
     return [
       'arg1' => $arg1,
       'arg2' => $arg2,
+      'op' => $op,
       'result' => $result
     ];
 }
