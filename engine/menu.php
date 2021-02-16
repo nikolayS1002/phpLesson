@@ -5,7 +5,8 @@ function getMenu($link = '/')
         $link => 'Главная',
         $link . 'catalog' => 'Каталог',
         $link . 'gallery' => 'Галерея',
-        $link . 'cart' => 'Корзина (<?= $count ?>)',
+        $link . 'cart' => 'Корзина',
         $link . 'calculator' => 'Калькулятор',
+        $link . 'feedback' => 'Отзывы',
     ];
 }

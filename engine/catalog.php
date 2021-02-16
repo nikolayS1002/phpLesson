@@ -1,5 +1,13 @@
 <?php
 function getCatalog() {
+    return getAssocResult("SELECT * FROM goods");
+}
+
+function getProduct($id) {
+    return getAssocResult("SELECT * FROM goods WHERE id = {$id}")[0];
+}
+
+function getJsonCatalog() {
     return [
         [
             'name' => 'Пицца',

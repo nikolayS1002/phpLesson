@@ -16,6 +16,7 @@ include "../engine/gallery.php";
 include "../engine/catalog.php";
 include "../engine/upload.php";
 include "../engine/menu.php";
+include "../engine/feedback.php";
 include "../engine/calc.php";
 include "../engine/classSimpleImage.php";
 

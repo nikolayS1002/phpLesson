@@ -18,10 +18,10 @@ function upload()
         $image->resize(150, 100);
         $image->save($path2);
 
-        header("Location: /gallery/&message=OK");
+        header("Location: /gallery/?message=ok");
         die();
     } else {
-        header("Location: /gallery/&message=error");
+        header("Location: /gallery/?message=error");
         die();
     }
 }
@@ -29,6 +29,3 @@ function upload()
 function getDbUpload($name, $size) {
     return executeSql("INSERT INTO images VALUES (NULL, '$name', $size, '0')");
 }
-
-
-
