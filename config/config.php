@@ -10,6 +10,7 @@ define('PASS', '12345');
 define('DB', 'site');
 
 include "../engine/db.php";
+include "../engine/auth.php";
 include "../engine/functions.php";
 include "../engine/log.php";
 include "../engine/gallery.php";
