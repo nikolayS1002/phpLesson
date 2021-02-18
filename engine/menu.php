@@ -1,11 +1,12 @@
 <?php 
+
 function getMenu($link = '/')
 {
     return [
         $link => 'Главная',
         $link . 'catalog' => 'Каталог',
+        $link . 'basket' => 'Корзина (' . getBasketCount() . ')',
         $link . 'gallery' => 'Галерея',
-        $link . 'cart' => 'Корзина',
         $link . 'calculator' => 'Калькулятор',
         $link . 'feedback' => 'Отзывы',
     ];
