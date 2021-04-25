@@ -41,13 +41,18 @@ switch ($page) {
         break;
 
     case 'basket':
+        $session_id = session_id();
+
+        if ($_GET['action'] == 'getOrder') {
+            $session_id = $_POST['id'];
+        }
         if ($_GET['action'] == 'delete') {
             $id = (int)$_GET['id'];
-            deleteBasket($id);
+            deleteBasket($id, $session_id);
         }
-
-        $params['basket'] = getBasket();
+        $params['basket'] = getBasket($session_id);
         $params['sum'] = getBasketSum();
+        $params['ses'] = $session_id;
         break;
 
     case 'login':
@@ -73,6 +78,20 @@ switch ($page) {
         session_destroy();
         header("Location: /");
         die();
+
+    case 'orders':
+        // if ($_GET['action'] == 'findOrder') {
+        //     $id = (int)$_GET['id'];
+        //     $_POST
+        // }
+        if (isset($_POST['session_id'])) {
+            $session_id = $_POST['session_id'];
+            echo $session_id;
+        }
+        // var_dump($_POST['id']);
+
+        $params['orders'] = getOrders();
+        break;
 
     case 'gallery':
         if (!empty($_FILES)) {

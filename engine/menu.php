@@ -9,5 +9,6 @@ function getMenu($link = '/')
         $link . 'gallery' => 'Галерея',
         $link . 'calculator' => 'Калькулятор',
         $link . 'feedback' => 'Отзывы',
+        $link . 'orders' => 'Заказы',
     ];
 }

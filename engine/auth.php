@@ -9,7 +9,7 @@ function get_user()
 function isAuth() {
     //TODO оптимизируйте алгритм, проверьте сессию прежде чем использовать куку
 
-    if (isset($_COOKIE["hash"])) {
+    if (isset($_COOKIE["hash"]) && !isset($_SESSION['login'])) {
         $hash = $_COOKIE["hash"];
         $sql = "SELECT * FROM users WHERE hash='{$hash}'";
         $result = mysqli_query(getDb(), $sql);

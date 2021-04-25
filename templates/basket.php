@@ -9,3 +9,17 @@ foreach ($basket as $value):?>
     </div>
 <? endforeach; ?>
 <div>Итого: <?=$sum?></div>
+<br>
+Оформите заказ:
+<form action="?action=order" method="post">
+    <input type="text" name="name" placeholder="Имя">
+    <input type="text" name="phone" placeholder="Телефон">
+    <input type="submit" value="Оформить заказ">
+</form>
+
+<?php
+    echo $ses;
+    if ($message == 'order') {
+        echo '<b> Заказ оформлен. </b>';
+    }
+?>
